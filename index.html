@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TryLogMe - Login Experience</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&family=Butcherman&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Homepage -->
+    <div id="homepage" class="screen active">
+        <div class="warning-container">
+            <h1 class="title glitch" data-text="TRYLOGME">TRYLOGME</h1>
+            <div class="warning-box">
+                <div class="skull">💀</div>
+                <h2>⚠️ EXTREME WARNING ⚠️</h2>                <p class="warning-text">
+                    Welcome to <strong>TryLogMe</strong> - The most frustrating login experience ever created!
+                </p>
+                <p class="warning-text">
+                    🔥 You are about to become a <em>DIFFERENT PERSON</em> after this experience! 🔥
+                </p>
+                <p class="warning-text">
+                    This nightmare journey will test your patience, sanity, and will to live.
+                    You have been warned!
+                </p>                <div class="effects-list">
+                    <p>⚡ Side effects may include:</p>
+                    <ul>
+                        <li>Uncontrollable rage</li>
+                        <li>Laptop throwing tendencies</li>
+                        <li>Existential crisis</li>
+                        <li>Trust issues with technology</li>
+                        <li>Permanent eye twitching</li>
+                    </ul>
+                </div>
+                <div class="game-instructions">
+                    <h3>🎮 How to Play</h3>
+                    <p>📝 <strong>For all levels:</strong> Use any 4-digit username and password combination</p>
+                    <p>💡 <strong>Example:</strong> Username: 1234, Password: 5678</p>
+                    <p>🚨 Emergency skip available after multiple failed attempts</p>
+                </div>
+                <button id="enterBtn" class="enter-btn pulse">
+                    ENTER AT YOUR OWN RISK
+                </button>
+            </div>
+        </div>
+    </div>    <!-- Level 1: Rotating Login -->
+    <div id="level1" class="screen">
+        <div class="level-header">
+            <h2>Level 1/10: The Spinning Nightmare</h2>
+            <div class="attempt-counter">Attempts: <span id="attempts1">0</span>/5</div>
+        </div><div class="rotating-container">
+            <div class="login-form rotating">
+                <h3>Login</h3>
+                <input type="text" id="username1" placeholder="Username" class="form-input">
+                <input type="password" id="password1" placeholder="Password" class="form-input">
+            </div>
+        </div>
+        <button type="button" id="next1" class="next-btn">Next</button>
+        <button id="hint1" class="hint-btn hidden">💡 Hint: Type "skip" in both fields</button>
+    </div>    <!-- Level 2: Hand Catching Game -->
+    <div id="level2" class="screen">
+        <div class="level-header">
+            <h2>Level 2/10: Hand Rotation Challenge</h2>
+            <div class="attempt-counter">Attempts: <span id="attempts2">0</span>/10</div>
+        </div>
+        <div class="hand-rotation-container">
+            <div class="hand-rotation-instructions">
+                <p>Rotate your hand to match the target hand's rotation exactly!</p>
+                <p>Rotation difference: <span id="rotationDifference">0</span>°</p>
+            </div>
+            <div class="hand-blocks-container">
+                <div class="hand-block target-block">
+                    <h3>Target Hand</h3>
+                    <div class="hand-display">
+                        <div class="rotating-hand" id="targetRotatingHand">👋</div>
+                    </div>
+                </div>
+                <div class="hand-block user-block">
+                    <h3>Your Hand</h3>
+                    <div class="hand-display">
+                        <div class="user-rotating-hand" id="userRotatingHand">✋</div>
+                    </div>
+                    <div class="rotation-controls">
+                        <button id="rotateLeft" class="rotate-btn">← Rotate Left</button>
+                        <button id="rotateRight" class="rotate-btn">Rotate Right →</button>
+                    </div>
+                </div>
+            </div>
+            <button id="next2" class="next-btn hidden">Next</button>
+        </div>
+        <button id="hint2" class="hint-btn hidden">💡 Hint: No skip available - match the rotation!</button>
+    </div><!-- Level 3: Random Generator -->
+    <div id="level3" class="screen">
+        <div class="level-header">
+            <h2>Level 3/10: Random Chaos Generator</h2>
+            <div class="attempt-counter">Attempts: <span id="attempts3">0</span>/5</div>
+        </div>
+        <div class="generator-container">
+            <div class="target-display">
+                <p>Find this combination:</p>
+                <div class="target">Username: <span id="targetUser">admin123</span></div>
+                <div class="target">Password: <span id="targetPass">pass456</span></div>
+            </div>
+            <div class="generator">
+                <div class="random-display">
+                    <div>Username: <span id="randomUser">xyz789</span></div>
+                    <div>Password: <span id="randomPass">abc123</span></div>
+                </div>
+                <button id="generateBtn" class="generate-btn">Generate Random</button>
+                <button id="next3" class="next-btn hidden">Next</button>
+            </div>        </div>
+        <button id="hint3" class="hint-btn hidden">💡 Hint: Keep generating until you find the target combination!</button>
+    </div>    <!-- Level 4: Floating Letters -->
+    <div id="level4" class="screen">
+        <div class="level-header">
+            <h2>Level 4/10: Floating Letter Hell</h2>
+            <div class="attempt-counter">Attempts: <span id="attempts4">0</span>/5</div>
+        </div>
+        <div class="floating-container">
+            <div class="input-display">
+                <div>Username: <span id="floatingUsername"></span></div>
+                <div>Password: <span id="floatingPassword"></span></div>
+            </div>
+            <div id="letterContainer" class="letter-container"></div>
+            <button id="clearFields" class="clear-btn">Clear</button>
+            <button id="next4" class="next-btn">Next</button>
+        </div>
+        <button id="hint4" class="hint-btn hidden">💡 Hint: Click letters to spell "skip" for both fields</button>
+    </div>    <!-- Level 5: Fragile Fields -->
+    <div id="level5" class="screen">
+        <div class="level-header">
+            <h2>Level 5/10: Fragile Input Fields</h2>
+            <div class="attempt-counter">Attempts: <span id="attempts5">0</span>/10</div>
+        </div>
+        <div class="fragile-container">
+            <div class="field-container" id="usernameContainer">
+                <label>Username:</label>
+                <input type="text" id="fragileUsername" class="fragile-input" placeholder="Type slowly...">
+            </div>            <div class="field-container" id="passwordContainer">
+                <label>Password:</label>
+                <input type="password" id="fragilePassword" class="fragile-input" placeholder="Type slowly...">
+            </div>
+            <button id="next5" class="next-btn">Next</button>
+        </div>
+        <button id="hint5" class="hint-btn hidden">💡 Hint: Type slowly and carefully in both fields</button>
+    </div>    <!-- Level 6: Random Submit Button Spawning -->
+    <div id="level6" class="screen">
+        <div class="level-header">
+            <h2>Level 6/10: Random Button Spawning</h2>
+            <div class="attempt-counter">Attempts: <span id="attempts6">0</span>/5</div>
+        </div>
+        <div class="spawning-container">
+            <input type="text" id="spawningUsername" placeholder="Username" class="form-input">
+            <input type="password" id="spawningPassword" placeholder="Password" class="form-input">
+            <div class="game-area" id="buttonGameArea">
+                <!-- Random buttons will spawn here -->
+            </div>
+            <div class="instruction">Fill both fields and catch the submit button when it appears!</div>
+        </div>
+        <button id="hint6" class="hint-btn hidden">💡 Hint: Type "skip" in both fields to proceed</button>
+    </div>    <!-- Level 7: Dropdown Hell -->
+    <div id="level7" class="screen">
+        <div class="level-header">
+            <h2>Level 7/10: Dropdown Letter Torture</h2>
+            <div class="attempt-counter">Attempts: <span id="attempts7">0</span>/10</div>
+        </div>
+        <div class="dropdown-container">
+            <div class="field-group">
+                <label>Username (select each letter):</label>
+                <div id="usernameDropdowns" class="dropdown-row"></div>
+            </div>
+            <div class="field-group">
+                <label>Password (select each letter):</label>
+                <div id="passwordDropdowns" class="dropdown-row"></div>
+            </div>
+            <button id="next7" class="next-btn">Next</button>
+        </div>
+        <button id="hint7" class="hint-btn hidden">💡 Hint: Try any combination, the system will randomly accept it</button>
+    </div><!-- Level 8: Password Guessing Challenge -->
+    <div id="level8" class="screen">
+        <div class="level-header">
+            <h2>Level 8/10: Password Memory Test</h2>
+            <div class="attempt-counter">Attempts: <span id="attempts8">0</span>/5</div>
+        </div>
+        <div class="password-challenge-container">
+            <input type="text" id="passwordUsername" placeholder="Username" class="form-input">
+            <input type="password" id="passwordPassword" placeholder="Password" class="form-input">
+            <div class="password-storage-info">
+                <p>Your password has been stored. Now pick the correct variation:</p>
+            </div>
+            <div class="password-options" id="passwordOptions">
+                <!-- Password options will be generated here -->
+            </div>
+            <button id="next8" class="next-btn hidden">Next</button>
+        </div>
+        <button id="hint8" class="hint-btn hidden">💡 Hint: Use "skip" for all fields</button>    </div>    <!-- Level 9: Random Popups -->    <div id="level9" class="screen">
+        <div class="level-header">
+            <h2>Level 9/10: Random Popup Chaos</h2>
+            <div class="attempt-counter">Attempts: <span id="attempts9">0</span>/10</div>
+        </div>
+        <div class="popup-container">
+            <input type="text" id="popupUsername" placeholder="Username" class="form-input">
+            <input type="password" id="popupPassword" placeholder="Password" class="form-input">
+            <button id="next9" class="next-btn">Next</button>
+        </div>
+        <div id="popupArea" class="popup-area"></div>
+        <button id="hint9" class="hint-btn hidden">💡 Hint: System might randomly accept valid credentials</button>
+    </div><!-- Level 10: Terms & Conditions Challenge -->
+    <div id="level10" class="screen">
+        <div class="level-header">
+            <h2>Level 10/10: The Final Challenge - Terms & Conditions</h2>
+        </div>
+        <div class="final-container">
+            <input type="text" id="finalUsername" placeholder="Username" class="form-input">
+            <input type="password" id="finalPassword" placeholder="Password" class="form-input">
+
+            <div class="tnc-section">
+                <h3>Please read and accept our Terms & Conditions:</h3>
+                <div class="tnc-content" id="tncContent">
+                    <!-- T&C content will be loaded here -->
+                </div>
+                <div class="tnc-options">
+                    <label>
+                        <input type="radio" name="tnc" value="yes"> Yes, I agree to Terms & Conditions
+                    </label>
+                    <label>
+                        <input type="radio" name="tnc" value="no"> No, I don't agree
+                    </label>
+                </div>
+                <button id="submitTnc" class="submit-tnc">Submit</button>
+            </div>
+        </div>
+        <button id="hint10" class="hint-btn hidden">💡 Hint: Use "skip" for both fields and select "Yes"</button>
+    </div>
+        </div>
+    </div>
+
+    <!-- TNC Reading Screen -->
+    <div id="tncReading" class="screen">
+        <div class="reading-container">
+            <h2>Terms & Conditions Reading Session</h2>
+            <div id="tncText" class="tnc-text"></div>
+            <button id="startQuiz" class="quiz-btn hidden">Take Quiz</button>
+        </div>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div id="quiz" class="screen">
+        <div class="quiz-container">
+            <h2>Terms & Conditions Quiz</h2>
+            <div id="quizContent" class="quiz-content"></div>
+            <button id="submitQuiz" class="submit-quiz">Submit Quiz</button>
+        </div>
+    </div>
+
+    <!-- Success Screen -->
+    <div id="success" class="screen">        <div class="success-container">
+            <h1>🎉 CONGRATULATIONS! 🎉</h1>
+            <p>You have successfully completed the TryLogMe experience!</p>
+            <p>You are now officially a different person. 😵‍💫</p>
+            <div class="reward-section">
+                <h3>Claim Your Reward!</h3>
+                <input type="text" id="walletAddress" placeholder="Enter your wallet address" class="wallet-input">
+                <button id="claimReward" class="claim-btn">Claim Reward</button>
+            </div>
+        </div>    </div>    <!-- Emergency Skip Button -->
+    <div id="emergencySkip" class="emergency-skip-container">
+        <button id="emergencySkipBtn" class="emergency-skip-btn">
+            🚨 EMERGENCY SKIP 🚨
+        </button>
+        <div class="skip-instructions">
+            <p>Stuck? Can't take it anymore?</p>
+            <p>Click here to skip the current level!</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">            <p>&copy;  trylogme 2025</p>
+            <a href="https://github.com/yourusername/trylogme" target="_blank" rel="noopener noreferrer">
+                GitHub Repository
+            </a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
