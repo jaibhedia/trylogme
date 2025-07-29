@@ -1,4 +1,4 @@
-# TryLogMe - Frustrating Login Experience
+# TryLogMe
 ## Complete Implementation Summary
 
 ### PROJECT OVERVIEW
